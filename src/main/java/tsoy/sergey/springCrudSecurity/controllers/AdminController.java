@@ -56,11 +56,11 @@ public class AdminController {
 //    public String newUser(@ModelAttribute("user") User user) {// то же самое через @ModelAttribute
 //        return "newUser";
 //    }
-    @GetMapping("/users/newUser")
+    @GetMapping("/users/new")
     public String newUser(Model model) {
         model.addAttribute("user", new User());
         model.addAttribute("roles", roleService.getAll());
-        return "newUser";
+        return "new";
     }
 
 //    @PostMapping("/users")
