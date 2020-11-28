@@ -30,6 +30,21 @@
 
         </tr>
     </table>
+
+    <table border="1">
+        <tr>
+            <th>Roles</th>
+        </tr>
+<!--        <tr>-->
+<!--            <td><p th:text="${admin.roles[0].role}"></p></td>-->
+<!--            <td><p th:text="${admin.roles[1].role}"></p></td>-->
+<!--        </tr>-->
+
+        <tr th:each="role : ${roles}">
+            <td><p th:text="${role.role}"></p></td>
+        </tr>
+    </table>
+
 </div>
 <br/>
 <a href="/admin/users"><input type="button" value="Get users"></a>
