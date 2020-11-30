@@ -27,7 +27,7 @@
     <input type="text" th:field="*{password}" id="password"/>
     <br/>
     <br/>
-    <input type="submit" value="Update"/>
+<!--    <input type="submit" value="Update"/>-->
 
     <label>Enter roles:
 
@@ -39,12 +39,22 @@
 <!--        />-->
 
         <!-- через мультиселект: -->
-            <select multiple size="2" name="rolesNames" >
-                <option value="ROLE_ADMIN">ROLE_ADMIN</option>
-                <option selected="selected" value="ROLE_USER">ROLE_USER</option>
-            </select>
+<!--            <select multiple size="2" name="rolesNames" >-->
+<!--                <option value="ROLE_ADMIN">ROLE_ADMIN</option>-->
+<!--                <option selected="selected" value="ROLE_USER">ROLE_USER</option>-->
+<!--            </select>-->
+
+        <select multiple size="2" name="rolesNames">
+            <option value=""> - Select role - </option>
+            <option
+                    th:each="role : ${rolesNames}"
+                    th:value="${role.role}"
+                    th:text="${role.role}">
+            </option>
+        </select>
 
     </label>
+    <input type="submit" value="Update"/>
 </form>
 
 <br/>
